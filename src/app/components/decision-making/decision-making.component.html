@@ -1,15 +1,105 @@
 <div>
 
-    <p>เลือกเพศ</p>
-    <input type="radio" name="gender" [(ngModel)]="user.gender" value="male"/>ชาย
-    <input type="radio" name="gender" [(ngModel)]="user.gender" value="female"/>หญิง
-    <p>อายุ</p>
-    <input type="radio" name="age" [(ngModel)]="user.age" value="s1"/>ชาย
-    <input type="radio" name="age" [(ngModel)]="user.age" value="s2"/>หญิง
-    <input type="radio" name="age" [(ngModel)]="user.age" value="s3"/>ชาย
-    <input type="radio" name="age" [(ngModel)]="user.age" value="s4"/>หญิง
-    <input type="radio" name="age" [(ngModel)]="user.age" value="s5"/>หญิง
-    <p>
+    <p>เพศ / Gender</p>
+    <input type="radio" name="gender" [(ngModel)]="user.gender" value="male"/>ชาย / Male<br>
+    <input type="radio" name="gender" [(ngModel)]="user.gender" value="female"/>หญิง / Female<br>
+    <input type="radio" name="gender" [(ngModel)]="user.gender" value="Unspecific"/>ไม่ระบุ / Unspecific<br>
+    <p>อายุ / Age</p>
+    <input type="radio" name="age" [(ngModel)]="user.age" value="s1_below_21"/>อายุน้อยกว่า 21 ปี / Below 21 years old<br>
+    <input type="radio" name="age" [(ngModel)]="user.age" value="s2_21_23"/>อายุ 21 ถึง 23 ปี / Ages 21 to 23<br>
+    <input type="radio" name="age" [(ngModel)]="user.age" value="s3_23_27"/>อายุ 21 ถึง 23 ปี / Ages 23 to 27<br>
+    <input type="radio" name="age" [(ngModel)]="user.age" value="s4_27_32"/>อายุ 21 ถึง 23 ปี / Ages 27 to 32<br>
+    <input type="radio" name="age" [(ngModel)]="user.age" value="s5_32_up"/>อายุมากกว่า 32 ปี / Over 32 years old<br>
+    <p>สัญชาติ / Nationality</p>
+    <input type="radio" name="nationality" [(ngModel)]="user.nationality" value="thai"/>ไทย / Thai<br>
+    <input type="radio" name="nationality" [(ngModel)]="user.nationality" value="foreigner"/>ชาวต่างชาติ / Foreigner<br>
+    <p>การศึกษา /  Education</p>
+    <input type="radio" name="education" [(ngModel)]="user.education" value="primary"/>ระดับประถมศึกษา / Primary<br>
+    <input type="radio" name="education" [(ngModel)]="user.education" value="secondary"/>ระดับมัธยมศึกษา / Secondary<br>
+    <input type="radio" name="education" [(ngModel)]="user.education" value="vocational"/>ระดับอาชีวะ หรือวิชาชีพ / Vocational or Technical<br>
+    <input type="radio" name="education" [(ngModel)]="user.education" value="bachelor"/>ระดับปริญญาตรี / Bachelor<br>
+    <input type="radio" name="education" [(ngModel)]="user.education" value="graduate"/>ระดับปริญญาโท เอก / Graduate<br>
+    <p>อาชีพ / Occupation</p>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="government"/>พนักงานรัฐวิสาหกิจ / State Enterprise Employee<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="state"/>พนักงานรัฐวิสาหกิจ / State Enterprise Employee<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="student"/>นักเรียน/นักศึกษา / Student<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="employee"/>รับจ้าง / Employee<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="trader"/>ค้าขาย / Trader<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="self"/>ทำงานส่วนตัว / Self – Employed<br>
+    <input type="radio" name="occupation" [(ngModel)]="user.occupation" value="other"/>อื่นๆ / Other<br>
+    <p>คุณเป็นผู้เล่นแบบไหน / What type of gamer are you</p>
+    <input type="radio" name="typeOfGamer" [(ngModel)]="user.typeOfGamer" value="hardcore"/>ผู้เล่นประจำ / Hardcore<br>
+    <input type="radio" name="typeOfGamer" [(ngModel)]="user.typeOfGamer" value="casual"/>ผู้เล่นทั่วไป / Casual<br>
+    <input type="radio" name="typeOfGamer" [(ngModel)]="user.typeOfGamer" value="dontknow"/>ไม่แน่ใจ / I don’t know<br>
+    <p>คุณชอบเล่นบอร์ดเกมแบบไหน / You prefer playing?</p>
+    <input type="radio" name="preferPlaying" [(ngModel)]="user.preferPlaying" value="alone"/>เล่นคนเดียว / Single Player Alone<br>
+    <input type="radio" name="preferPlaying" [(ngModel)]="user.preferPlaying" value="withOtherPeople"/>เล่นคนเดียวพร้อมกับผู้อื่น / Single Player with other people (turn based, passive)<br>
+    <input type="radio" name="preferPlaying" [(ngModel)]="user.preferPlaying" value="competitive"/>เล่นหลายคนแข่งกับคนอื่นๆ / Multiplayer in competitive mode<br>
+    <input type="radio" name="preferPlaying" [(ngModel)]="user.preferPlaying" value="cooperative"/>เล่นหลายคนช่วยกัน / Multiplayer in cooperative mode<br>
+    <p>ถ้าคุณถูกเชิญให้เล่นบอร์ดเกมที่ไม่เคยเล่นมาก่อน คุณคิดว่าปัจจัยดังต่อไปนี้มีสำคัญขนาดไหน / If you were asked to play a board game, how important would the following aspects be to you</p>
+    <table class="table">
+        <thead class="thead-dark">
+            <th><p>คำถาม /<br> Question</p></th>
+            <th align='center'><p>ไม่สำคัญเลย /<br> Not Important at all</p></th>
+            <th align='center'><p>สำคัญอยู่บ้าง /<br> Somewhat important</p></th>
+            <th align='center'><p>ค่อนข้างสำคัญ /<br> Quite important</p></th>
+            <th align='center'><p>สำคัญมาก /<br> Very Important</p></th>
+        </thead>
+        <tr>
+            <td><p>เรียนรู้ง่าย /<br> Easy to learn</p></td>
+            <td align='center'><input type="radio" name="easyToLearn" [(ngModel)]="user.easyToLearn" value="s1"/></td>
+            <td align='center'><input type="radio" name="easyToLearn" [(ngModel)]="user.easyToLearn" value="s2"/></td>
+            <td align='center'><input type="radio" name="easyToLearn" [(ngModel)]="user.easyToLearn" value="s3"/></td>
+            <td align='center'><input type="radio" name="easyToLearn" [(ngModel)]="user.easyToLearn" value="s4"/></td>
+        </tr>
+        <tr>
+                <td><p>เล่นง่าย /<br> Easy to play</p></td>
+                <td align='center'><input type="radio" name="easyToPlay" [(ngModel)]="user.easyToPlay" value="s1"/></td>
+                <td align='center'><input type="radio" name="easyToPlay" [(ngModel)]="user.easyToPlay" value="s2"/></td>
+                <td align='center'><input type="radio" name="easyToPlay" [(ngModel)]="user.easyToPlay" value="s3"/></td>
+                <td align='center'><input type="radio" name="easyToPlay" [(ngModel)]="user.easyToPlay" value="s4"/></td>
+            </tr>
+            <tr>
+                    <td><p>ท้าทาย /<br> Challenging</p></td>
+                    <td align='center'><input type="radio" name="challenging" [(ngModel)]="user.challenging" value="s1"/></td>
+                    <td align='center'><input type="radio" name="challenging" [(ngModel)]="user.challenging" value="s2"/></td>
+                    <td align='center'><input type="radio" name="challenging" [(ngModel)]="user.challenging" value="s3"/></td>
+                    <td align='center'><input type="radio" name="challenging" [(ngModel)]="user.challenging" value="s4"/></td>
+                </tr>
+                <tr>
+                        <td><p>มีความหลากหลาย /<br> Lots of variety</p></td>
+                        <td align='center'><input type="radio" name="lotsOfVariety" [(ngModel)]="user.lotsOfVariety" value="s1"/></td>
+                        <td align='center'><input type="radio" name="lotsOfVariety" [(ngModel)]="user.lotsOfVariety" value="s2"/></td>
+                        <td align='center'><input type="radio" name="lotsOfVariety" [(ngModel)]="user.lotsOfVariety" value="s3"/></td>
+                        <td align='center'><input type="radio" name="lotsOfVariety" [(ngModel)]="user.lotsOfVariety" value="s4"/></td>
+                    </tr>
+                    <tr>
+                            <td><p>ร่วมมือกัน /<br> Cooperative</p></td>
+                            <td align='center'><input type="radio" name="cooperative" [(ngModel)]="user.cooperative" value="s1"/></td>
+                            <td align='center'><input type="radio" name="cooperative" [(ngModel)]="user.cooperative" value="s2"/></td>
+                            <td align='center'><input type="radio" name="cooperative" [(ngModel)]="user.cooperative" value="s3"/></td>
+                            <td align='center'><input type="radio" name="cooperative" [(ngModel)]="user.cooperative" value="s4"/></td>
+                        </tr>
+                        <tr>
+                                <td><p>แข่งขันกับคนอื่น /<br> Completive</p></td>
+                                <td align='center'><input type="radio" name="completive" [(ngModel)]="user.completive" value="s1"/></td>
+                                <td align='center'><input type="radio" name="completive" [(ngModel)]="user.completive" value="s2"/></td>
+                                <td align='center'><input type="radio" name="completive" [(ngModel)]="user.completive" value="s3"/></td>
+                                <td align='center'><input type="radio" name="completive" [(ngModel)]="user.completive" value="s4"/></td>
+                            </tr>
+                            <tr>
+                                    <td><p>ความสวยงาม /<br> Art work</p></td>
+                                    <td align='center'><input type="radio" name="artwork" [(ngModel)]="user.artwork" value="s1"/></td>
+                                    <td align='center'><input type="radio" name="artwork" [(ngModel)]="user.artwork" value="s2"/></td>
+                                    <td align='center'><input type="radio" name="artwork" [(ngModel)]="user.artwork" value="s3"/></td>
+                                    <td align='center'><input type="radio" name="artwork" [(ngModel)]="user.artwork" value="s4"/></td>
+                                </tr>
         
-    </p>
+    </table>
+   
+
+
+    
+    
+
 </div>
