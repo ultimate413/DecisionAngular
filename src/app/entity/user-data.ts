@@ -29,6 +29,7 @@ export class UserData {
 	private multipleCharacters:string;
 	private buildingOrStructures:string;
 	private playerInteraction:string;
+	private takeThatAspects:string;
 	private upgradeable:string;
 	private defense:string;
 	private findingItems:string;
@@ -281,6 +282,14 @@ export class UserData {
 
 	public setPlayerInteraction(playerInteraction: string): void {
 		this.playerInteraction = playerInteraction;
+	}
+
+	public getTakeThatAspects(): string {
+		return this.takeThatAspects;
+	}
+
+	public setTakeThatAspects(takeThatAspects: string): void {
+		this.takeThatAspects = takeThatAspects;
 	}
 
 	public getUpgradeable(): string {
