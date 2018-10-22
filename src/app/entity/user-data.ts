@@ -1,6 +1,6 @@
 export class UserData {
     private gender:string;
-	private age:number;
+	private age:string;
 	private nationality:string;
 	private education:string;
 	private occupation:string;
@@ -52,11 +52,11 @@ export class UserData {
 		this.gender = gender;
 	}
 
-	public getAge(): number {
+	public getAge(): string {
 		return this.age;
 	}
 
-	public setAge(age: number): void {
+	public setAge(age: string): void {
 		this.age = age;
 	}
 
