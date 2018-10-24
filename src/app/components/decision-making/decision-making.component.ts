@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from 'src/app/entity/user-data';
 import { DecisionMakingService } from 'src/app/shared_service/decision-making.service';
+
 @Component({
   selector: 'app-decision-making',
   templateUrl: './decision-making.component.html',
