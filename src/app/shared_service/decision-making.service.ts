@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WsTaskService } from './ws-task.service';
 import { UserData } from 'src/app/entity/user-data';
+import { BoardGame } from '../entity/board-game';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,6 @@ export class DecisionMakingService {
       console.log(data)
     })
   }
+
 
 }

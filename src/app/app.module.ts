@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DecisionMakingComponent } from './components/decision-making/decision-making.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const appRoutes:Routes=[
   {
     path:'',
@@ -26,6 +26,7 @@ const appRoutes:Routes=[
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
