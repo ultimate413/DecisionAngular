@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { UserData } from 'src/app/entity/user-data';
-import { DecisionMakingService } from 'src/app/shared_service/decision-making.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserDataModel } from '../../entity/user-data';
+import { DecisionMakingService } from '../../shared_service/DecisionMakingController/decision-making.service';
+import { BoardGameModel } from '../../entity/board-game';
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-decision-making',
@@ -9,11 +11,13 @@ import { DecisionMakingService } from 'src/app/shared_service/decision-making.se
 })
 export class DecisionMakingComponent implements OnInit {
   
+  @ViewChild("ErrorModal") errorModal;
   private height:number = 0;
-  private user = new UserData();
+  private user = new UserDataModel();
   private count:number = 0;
+  private boardGames = new Array<BoardGameModel>()
 
-  constructor(private DecisionMakingController:DecisionMakingService) { }
+  constructor(private DecisionMakingController:DecisionMakingService,private sanitizer:DomSanitizer) { }
 
   private gendercheck:boolean = false ;
   private agecheck:boolean = false ;
@@ -63,7 +67,10 @@ export class DecisionMakingComponent implements OnInit {
   private ProgressBarType:String="";
   private StatusAccuracy:String="Accuracy Of Decision 0%";
   heightBar = '35px';
+  private textResult:String="";
+  private textTankyou:String="";
 
+  
 updateProgressColor(){ /*Set Color Progressbar and Set Status Progressbar*/
   if(this.height > 0 && this.height < 30){
     this.ProgressBarType = "danger"
@@ -401,11 +408,28 @@ updateComboProgressbar(){
 }this.updateProgressColor();
 }
 
-
-  doPost(){
-   
-      this.DecisionMakingController.postUserData(this.user);
+  getEmbededUrl(url){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
   
+  doPost(){
+    if(this.height < 30){
+      this.errorModal.open()
+    }else{
+      this.DecisionMakingController.postUserData(this.user).then((res:BoardGameModel[])=>{
+        this.boardGames = res;
+        this.textResult = "Here are our recommendation for your  board game.";
+        this.textTankyou = "Thank you for using our decision support system.";
+        setTimeout(() => {
+        document.getElementById("show").scrollIntoView();
+        }, 100);
+      });
+    }
+
+  }
+
+  refresh(){
+    location.reload();
   }
 
   ngOnInit() {

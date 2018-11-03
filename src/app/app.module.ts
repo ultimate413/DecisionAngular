@@ -4,8 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
  import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'angular-custom-modal'
 
-import { AppComponent } from './app.component';
+import { AppComponent, } from './app.component';
 import { DecisionMakingComponent } from './components/decision-making/decision-making.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const appRoutes:Routes=[
@@ -25,6 +26,7 @@ const appRoutes:Routes=[
     HttpClientModule,
     HttpModule,
     FormsModule,
+    ModalModule,
     RouterModule.forRoot(appRoutes),
     NgbModule
   ],

@@ -1,4 +1,4 @@
-export class Cafe{
+export class CafeModel{
     private id:number;
     private nameCafe:String;
     private googleMapLink:String;

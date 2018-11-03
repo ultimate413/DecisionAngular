@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+.modal-dialog{
+    margin-top:15%!important;
+    max-width: 1000px!important;
+}
+body,
+html {
+    background: url("./app/components/image/bg.jpg")no-repeat center center fixed;
+    background-size: cover;
+    font-family: Kanit;
+ 
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/Kanit-Regular.ttf')
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  

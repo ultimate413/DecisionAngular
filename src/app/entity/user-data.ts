@@ -1,4 +1,4 @@
-export class UserData {
+export class UserDataModel {
     private gender:string;
 	private age:string;
 	private nationality:string;

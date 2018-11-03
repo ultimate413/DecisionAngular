@@ -1,10 +1,20 @@
-import {CafeBoardGame} from'./cafe-board-game'
 
-export class BoardGame {
+import { CafeModel } from './cafe';
+
+export class BoardGameModel {
     private idBoardGame:number;
     private nameBoardGame:String;
     private pictureBoardGame:String;
-    private CafeBoardGame:Array<CafeBoardGame>;
+    private cafeBoardGame:Array<CafeModel>;
+
+    public getCafeBoardGame(): Array<CafeModel> {
+        return this.cafeBoardGame;
+    }
+
+    public setCafeBoardGame(cafeBoardGame: Array<CafeModel>): void {
+        this.cafeBoardGame = cafeBoardGame;
+    }
+
 
     public getIdBoardGame(): number
  {
@@ -35,15 +45,7 @@ export class BoardGame {
 ): void {
         this.pictureBoardGame = pictureBoardGame;
     }
-
-    public getCafeBoardGame(): Array<CafeBoardGame> {
-        return this.CafeBoardGame;
-    }
-
-    public setCafeBoardGame(CafeBoardGame: Array<CafeBoardGame>): void {
-        this.CafeBoardGame = CafeBoardGame;
-    }
-
+   
 
 
 }
